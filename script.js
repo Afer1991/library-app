@@ -1,5 +1,7 @@
 const myLibrary = [];
 const table = document.getElementById("table");
+const dialog = document.querySelector("dialog");
+const addButton = document.getElementById("add-book");
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -25,3 +27,7 @@ function displayBook() {
     cell4.innerHTML = myLibrary[i].read;
   }
 }
+
+addButton.addEventListener("click", () => {
+  dialog.showModal();
+});

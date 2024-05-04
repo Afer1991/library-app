@@ -28,7 +28,46 @@ h1 {
   justify-content: center;
 }
 
-button {
+dialog {
+  top: 15%;
+  left: 45%;
+  padding: 16px;
+  border: none;
+  border-radius: 5%;
+  font-family: "Raleway";
+  background: #f8f8f8;
+}
+
+form h2 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+form p:nth-of-type(4), form p:nth-of-type(5) {
+  text-align: center;
+  margin-top: 16px;
+}
+
+input {
+  margin-bottom: 8px;
+  padding: 8px;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+form button {
+  padding: 4px 16px;
+  background: #facc15;
+  border: none;
+  border-radius: 5%;
+}
+
+#add-book {
  padding: 8px 16px;
  align-self: center;
  background-color: #f8f8f8;
@@ -40,7 +79,7 @@ button {
  transition-duration: 1s;
 }
 
-button:hover {
+#add-book:hover {
   padding: 16px 32px;
   font-size: 2rem;
   cursor: pointer;
@@ -66,4 +105,5 @@ td, th {
   border: 2px solid #000;
   background: #fff;
 }
+
 
