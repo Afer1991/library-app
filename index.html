@@ -16,23 +16,23 @@
         <form action="">
           <h2>Add new book</h3>
           <p>
-            <label for=""></label>
-            <input type="text" placeholder="Title"/>
+            <label for="title"></label>
+            <input type="text" id="title" placeholder="Title" required />
           </p>
           <p>
-            <label for=""></label>
-            <input type="text" placeholder="Author"/>
+            <label for="author"></label>
+            <input type="text" id="author" placeholder="Author" required />
           </p>
           <p>
-            <label for=""></label>
-            <input type="text" placeholder="Pages"/>
+            <label for="pages"></label>
+            <input type="number" id="pages" placeholder="Pages" required />
           </p>
           <p>
-            <label for="">Have you read it?</label>
-            <input type="checkbox">
+            <label for="read">Have you read it?</label>
+            <input type="checkbox" id="read">
           </p>
           <p>
-            <button>Submit</button>
+            <button id="submit">Submit</button>
           </p>
         </form>
       </dialog>
