@@ -1,8 +1,12 @@
 const myLibrary = [];
-const table = document.getElementById("table");
+const tableBody = document.querySelector("tbody");
 const dialog = document.querySelector("dialog");
 const addButton = document.getElementById("add-book");
 const submitButton = document.getElementById("submit");
+let newBookTitle = document.getElementById("title");
+let newBookAuthor = document.getElementById("author");
+let newBookPages = document.getElementById("pages");
+let newBookRead = document.getElementById("read");
 
 submitButton.onclick = addBookToLibrary;
 
@@ -14,17 +18,21 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-  let newBookTitle = document.getElementById("title");
-  let newBookAuthor = document.getElementById("author");
-  let newBookPages = document.getElementById("pages");
-  let newBookRead = document.getElementById("read");
-  let newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
+  let newBook = new Book(newBookTitle.value, newBookAuthor.value, newBookPages.value, newBookRead.value);
   myLibrary.push(newBook);
+  newBookTitle.value = "";
+  newBookAuthor.value = "";
+  newBookPages.value = "";
+  newBookRead.checked = false;
+  displayBook();
 }
 
 function displayBook() {
+  while (tableBody.hasChildNodes()) {
+    tableBody.removeChild(tableBody.firstChild);
+  }
   for (let i = 0; i < myLibrary.length; i++) {
-    let row = table.insertRow(i + 1);
+    let row = tableBody.insertRow(i);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
@@ -42,4 +50,5 @@ addButton.addEventListener("click", () => {
 
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
+  dialog.close();
 });
