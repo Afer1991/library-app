@@ -122,3 +122,16 @@ tbody tr:nth-child(even) {
   color: #FFF;
 }
 
+tr td:nth-child(5), tr th:nth-child(5) {
+  background: #f8f8f8;
+}
+
+.remove {
+  background: #3b82f6;
+  color: #FFF;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+

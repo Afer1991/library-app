@@ -10,6 +10,15 @@ let newBookRead = document.getElementById("read");
 
 submitButton.onclick = addBookToLibrary;
 
+addButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  dialog.close();
+});
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -37,18 +46,11 @@ function displayBook() {
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
     let cell4 = row.insertCell(3);
+    let cell5 = row.insertCell(4);
     cell1.innerHTML = myLibrary[i].title;
     cell2.innerHTML = myLibrary[i].author;
     cell3.innerHTML = myLibrary[i].pages;
     cell4.innerHTML = myLibrary[i].read;
+    cell5.innerHTML = "<button class=\"remove\">Remove</button>";
   }
 }
-
-addButton.addEventListener("click", () => {
-  dialog.showModal();
-});
-
-submitButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  dialog.close();
-});
