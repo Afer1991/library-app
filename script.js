@@ -7,10 +7,8 @@ let newBookTitle = document.getElementById("title");
 let newBookAuthor = document.getElementById("author");
 let newBookPages = document.getElementById("pages");
 let newBookRead = document.getElementById("read");
-let removeButton = document.getElementsByClassName("remove");
 
 submitButton.onclick = addBookToLibrary;
-removeButton.onclick = removeBook;
 
 addButton.addEventListener("click", () => {
   dialog.showModal();
@@ -55,12 +53,13 @@ function displayBook() {
     cell2.innerHTML = myLibrary[i].author;
     cell3.innerHTML = myLibrary[i].pages;
     cell4.innerHTML = myLibrary[i].read;
-    cell5.innerHTML = "<button class=\"remove\">Remove</button>";
+    cell5.innerHTML = "<button onclick=\"deleteItem(this)\" class=\"remove\">Remove</button>";
     myLibrary[i].id = `${i}`;
   }
 }
 
-function removeBook(){
-  let parent = removeButton.parentNode;
-  parent.remove();
+function deleteItem(btn) {
+  const parentID = btn.closest("tr").dataset.id;
+  myLibrary.splice(parentID, 1);
+  displayBook();
 }
