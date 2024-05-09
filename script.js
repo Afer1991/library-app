@@ -19,16 +19,15 @@ submitButton.addEventListener("click", (event) => {
   dialog.close();
 });
 
-function Book(title, author, pages, read, id) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.id = id;
 }
 
 function addBookToLibrary() {
-  let newBook = new Book(newBookTitle.value, newBookAuthor.value, newBookPages.value, newBookRead.checked, 0);
+  let newBook = new Book(newBookTitle.value, newBookAuthor.value, newBookPages.value, newBookRead.checked);
   myLibrary.push(newBook);
   newBookTitle.value = "";
   newBookAuthor.value = "";
@@ -58,7 +57,6 @@ function displayBook() {
       cell4.innerHTML = "<button onclick=\"readStatus(this)\" class=\"unread\">Not Read</button>";
     }
     cell5.innerHTML = "<button onclick=\"deleteItem(this)\" class=\"remove\">Remove</button>";
-    myLibrary[i].id = `${i}`;
   }
 }
 
@@ -68,9 +66,15 @@ function deleteItem(btn) {
   displayBook();
 }
 
-/*function readStatus(btn) {
+function readStatus(btn) {
   const parentID = btn.closest("tr").dataset.id;
-  if (myLibrary[parentID].read === true) {
-
+  if(myLibrary[parentID].read) {
+    myLibrary[parentID].read = false;
+    btn.setAttribute("class", "unread");
+    btn.innerHTML = "Not Read";
+  } else {
+    myLibrary[parentID].read = true;
+    btn.setAttribute("class", "read");
+    btn.innerHTML = "Read";
   }
-}*/
+}
