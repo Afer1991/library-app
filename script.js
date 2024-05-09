@@ -52,7 +52,11 @@ function displayBook() {
     cell1.innerHTML = myLibrary[i].title;
     cell2.innerHTML = myLibrary[i].author;
     cell3.innerHTML = myLibrary[i].pages;
-    cell4.innerHTML = myLibrary[i].read;
+    if (myLibrary[i].read) {
+      cell4.innerHTML = "<button onclick=\"readStatus(this)\" class=\"read\">Read</button>";
+    } else {
+      cell4.innerHTML = "<button onclick=\"readStatus(this)\" class=\"unread\">Not Read</button>";
+    }
     cell5.innerHTML = "<button onclick=\"deleteItem(this)\" class=\"remove\">Remove</button>";
     myLibrary[i].id = `${i}`;
   }
@@ -63,3 +67,10 @@ function deleteItem(btn) {
   myLibrary.splice(parentID, 1);
   displayBook();
 }
+
+/*function readStatus(btn) {
+  const parentID = btn.closest("tr").dataset.id;
+  if (myLibrary[parentID].read === true) {
+
+  }
+}*/
