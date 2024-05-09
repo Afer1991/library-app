@@ -2,20 +2,19 @@ const myLibrary = [];
 const tableBody = document.querySelector("tbody");
 const dialog = document.querySelector("dialog");
 const addButton = document.getElementById("add-book");
-const submitButton = document.getElementById("submit");
+const submitForm = document.querySelector("form");
 let newBookTitle = document.getElementById("title");
 let newBookAuthor = document.getElementById("author");
 let newBookPages = document.getElementById("pages");
 let newBookRead = document.getElementById("read");
 
-submitButton.onclick = addBookToLibrary;
-
 addButton.addEventListener("click", () => {
   dialog.showModal();
 });
 
-submitButton.addEventListener("click", (event) => {
+submitForm.addEventListener("submit", (event) => {
   event.preventDefault();
+  addBookToLibrary();
   dialog.close();
 });
 
