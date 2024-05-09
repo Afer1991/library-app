@@ -101,6 +101,7 @@ table {
   align-self: flex-start;
   border-collapse: collapse;
   font-family: "Raleway";
+  font-size: 1.15rem;
 }
 
 td, th {
@@ -132,6 +133,29 @@ tr td:nth-child(5), tr th:nth-child(5) {
   border: none;
   padding: 8px 16px;
   border-radius: 10px;
+  font-family: "Raleway";
+  font-size: 1.15rem;
   font-weight: bolder;
 }
 
+.read {
+  background: #07a307;
+  color: #FFF;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-family: "Raleway";
+  font-size: 1.15rem;
+  font-weight: bolder;
+}
+
+.unread {
+  background: #d10101;
+  color: #FFF;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-family: "Raleway";
+  font-size: 1.15rem;
+  font-weight: bolder;
+}
