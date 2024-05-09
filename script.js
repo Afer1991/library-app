@@ -28,7 +28,7 @@ function Book(title, author, pages, read, id) {
 }
 
 function addBookToLibrary() {
-  let newBook = new Book(newBookTitle.value, newBookAuthor.value, newBookPages.value, newBookRead.value, 0);
+  let newBook = new Book(newBookTitle.value, newBookAuthor.value, newBookPages.value, newBookRead.checked, 0);
   myLibrary.push(newBook);
   newBookTitle.value = "";
   newBookAuthor.value = "";
